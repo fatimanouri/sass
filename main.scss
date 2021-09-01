@@ -1,0 +1,71 @@
+@import "container";
+
+$gray:lightgray;
+$width_200:200px;
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin  borderRadius($x) {
+    border-radius:$x;
+    
+}
+%div{
+    width: 100%;
+    background-color: blueviolet;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html,body{
+
+    @extend %div;
+}
+
+body{
+    @include center();
+
+}
+
+.cantainer{
+
+    width: 80%;
+    height: 300px;
+    border: 1px solid gray;
+    background-color:$gray;
+    margin-top: 30px;
+   @include borderRadius(10px);
+    @include center();
+    .card{
+        width: $width_200;
+        height: 200px;
+        border: 1px solid gray;
+        background-color: turquoise;
+        @include  borderRadius(7px);
+        @include center();
+        .child{
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            background-color: tomato;
+            @include borderRadius(5px);
+            @include center();
+           
+
+            &:hover{
+                color: blue;
+               }
+        }
+    
+    }
+
+}
+
+
+// .child:hover{
+//  color: blue;
+// }

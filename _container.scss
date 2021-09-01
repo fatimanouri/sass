@@ -1,0 +1,21 @@
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin  borderRadius($x) {
+    border-radius:$x;
+    
+}
+$gray:lightgray;
+
+.cantainer{
+
+    width: 80%;
+    height: 300px;
+    border: 1px solid gray;
+    background-color:$gray;
+    margin-top: 30px;
+   @include borderRadius(10px);
+    @include center();
+}
